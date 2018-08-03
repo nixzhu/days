@@ -9,10 +9,14 @@ final class Todo: SQLiteModel {
     /// A title describing what this `Todo` entails.
     var title: String
 
+    /// Is this `Todo` checked
+    var isChecked: Bool
+
     /// Creates a new `Todo`.
-    init(id: Int? = nil, title: String) {
+    init(id: Int? = nil, title: String, isChecked: Bool) {
         self.id = id
         self.title = title
+        self.isChecked = isChecked
     }
 }
 
