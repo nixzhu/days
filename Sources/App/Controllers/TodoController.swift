@@ -2,7 +2,7 @@ import Vapor
 
 final class TodoController: RouteCollection {
 
-    func boot(router:  Router) throws {
+    func boot(router: Router) throws {
         let todos = router.grouped("todos")
         todos.get("/", use: page)
         todos.get("/", Todo.parameter, use: read)

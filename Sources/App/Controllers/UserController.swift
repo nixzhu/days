@@ -3,7 +3,7 @@ import Crypto
 
 final class UserController: RouteCollection {
 
-    func boot(router:  Router) throws {
+    func boot(router: Router) throws {
         let users = router.grouped("users")
         users.post("/", use: register)
         let middleware = User.basicAuthMiddleware(using: BCryptDigest())
