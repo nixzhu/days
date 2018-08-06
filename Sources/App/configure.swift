@@ -1,5 +1,6 @@
 import FluentSQLite
 import Vapor
+import Authentication
 
 /// Called before your application initializes.
 public func configure(_ config: inout Config, _ env: inout Environment, _ services: inout Services) throws {
@@ -34,4 +35,5 @@ public func configure(_ config: inout Config, _ env: inout Environment, _ servic
     migrations.add(model: PostTag.self, database: .sqlite)
     services.register(migrations)
 
+    try services.register(AuthenticationProvider())
 }
