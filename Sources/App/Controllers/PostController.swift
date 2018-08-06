@@ -22,7 +22,9 @@ final class PostController: RouteCollection {
             creatorID: try user.requireID()
         )
         let tag = Tag(name: "Tag1")
-        _ = post.tags.attach(tag, on: req)
-        return post.save(on: req)
+        return tag.save(on: req).flatMap { tag in
+            _ = post.tags.attach(tag, on: req)
+            return post.save(on: req)
+        }
     }
 }
