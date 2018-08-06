@@ -8,8 +8,9 @@ public func routes(_ router: Router) throws {
         return "OK"
     }
 
-    try router.register(collection: TodoController())
-    try router.register(collection: UserController())
-    try router.register(collection: PostController())
-    try router.register(collection: TagController())
+    let api = router.grouped("api")
+    try api.register(collection: TodoController())
+    try api.register(collection: UserController())
+    try api.register(collection: PostController())
+    try api.register(collection: TagController())
 }
