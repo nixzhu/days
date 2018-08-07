@@ -19,7 +19,7 @@ extension User {
     }
 }
 
-extension User: BasicAuthenticatable {
+extension User: PasswordAuthenticatable {
     static var usernameKey: WritableKeyPath<User, String> {
         return \.email
     }
@@ -27,6 +27,8 @@ extension User: BasicAuthenticatable {
         return \.password
     }
 }
+
+extension User: SessionAuthenticatable { }
 
 extension User {
     struct Public: Content {
