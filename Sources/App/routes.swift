@@ -3,8 +3,7 @@ import Vapor
 public func routes(_ router: Router) throws {
 
     router.get("/") { req -> Future<View> in
-        let context = ["date": Date()]
-        return try req.view().render("welcome", context)
+        return try req.view().render("home")
     }
 
     router.get("init") { req -> String in
