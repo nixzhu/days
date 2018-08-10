@@ -12,24 +12,25 @@
             </div>
         </ul>
     </div>
-    <script>
-        var app = new Vue({
-            el: '#nav',
-            data: {
-                name: "Days",
-                menus: [
-                    {
-                        "href": "/",
-                        "title": "Home",
-                        "isActive": window.location.pathname === "/"
-                    },
-                    {
-                        "href": "/about",
-                        "title": "About",
-                        "isActive": window.location.pathname === "/about"
-                    }
-                ]
-            }
-        })
-    </script>
 </nav>
+
+<script>
+    var app = new Vue({
+        el: '#nav',
+        data: {
+            name: "Days",
+            menus: [
+                {
+                    "href": "/",
+                    "title": "Home",
+                    "isActive": window.location.pathname === "/"
+                },
+                {
+                    "href": "/about",
+                    "title": "About",
+                    "isActive": window.location.pathname === "/about"
+                }
+            ]
+        }
+    })
+</script>
