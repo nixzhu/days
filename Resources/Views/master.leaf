@@ -3,8 +3,10 @@
     <head>
         <title>#get(title)</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
     </head>
     <body class="container">
+        #embed("nav")
         <br />
         #get(body)
     </body>

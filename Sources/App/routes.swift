@@ -6,6 +6,10 @@ public func routes(_ router: Router) throws {
         return try req.view().render("home")
     }
 
+    router.get("about") { req -> Future<View> in
+        return try req.view().render("about")
+    }
+
     router.get("init") { req -> String in
         let todo = Todo(title: "阅读《编译器设计》", isChecked: false)
         _ = todo.create(on: req)
